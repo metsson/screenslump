@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {	
+	color: #fff !important;
+	text-shadow: 1px 0 1px rgba(0,0,0, .6);
+}
+
+body {
+	padding: 100px 50px;
+	background-color: #02779E !important;
+	line-height: 2;
+	text-align: center;
+}
+
+.btn {
+	background: transparent !important;
+}
+
+.btn:hover {
+	border-color: #fff;
+}
+
+.container {
+	max-width: 600px;
+	padding-bottom: 60px;
+}
+
+.logo-style {
+	font-family: 'Pacifico', cursive;
+}
+
+.big {
+	font-size: 3em;
+	line-height: 2;
+}
+
+.slump {
+	font-size: 100%;	
+	line-height: 2;
+}
+
+footer a, 
+footer p,
+footer strong {
+	color: rgba(255,255,255, .6) !important;
+}
+
+footer {	
+	margin-top: 160px;
+	margin-bottom: -60px;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding: 10px 5px;
+	}
+
+	.slump ul li {
+		padding: 10px;
+	}
+
+	footer {
+		font-size: 80%;
+	}
+}

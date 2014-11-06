@@ -1,0 +1,16 @@
+<% content_for :meta_tags do %>
+<title>screenslump &mdash; when you're clueless about what to stream up next</title>
+<meta property="og:title" content="When you're clueless about what to stream up next">
+<meta property="og:description" content="A slump is a randomly picked suggestion for movie or series to stream up next">
+<meta property="og:url" content="<%= request.original_url %>">
+<meta property="og:site_name" content="screenslump">
+<meta property="og:image" content="/apple-touch-icon-144x144.png">
+<meta property="og:type" content="website">
+<% end %>
+<div class="slump">
+	<h2>
+		Your next <span class="logo-style">slump</span> can be the <%= @slump.sort.name %><br>
+		<strong>'<%= @slump.title %></strong>' from <%= @slump.year %>.<br> 
+		<%= link_to 'Learn more', show_slump_path(@slump.id, @slump.title.parameterize), class: 'btn btn-default btn-sm' %> 
+	</h2>	
+</div>

@@ -1,0 +1,44 @@
+<% content_for :meta_tags do %>
+<title>Why not give '<%= @slump.title %>' a chance? &mdash; screenslump</title>
+<meta property="og:title" content="A slump called '<%= @slump.title %>'">
+<meta property="og:description" content="Don't know what to watch next? How about the <%= @slump.sort.name %> '<%= @slump.title %> from <%= @slump.year %>?">
+<meta property="og:url" content="<%= request.original_url %>">
+<meta property="og:site_name" content="screenslump">
+<meta property="og:type" content="video.movie">
+<% end %>
+<div class="slump">
+	<h2>
+		<%= @slump.title %>		
+	</h2>	
+	<!-- plot -->
+	<% if @slump.plot and @slump.plot != 'N/A' %>
+	<p class="lead"><%= @slump.plot %></p>
+	<% else %>
+	<p class="lead">No further description was found for the <span class="logo-style">slump</span><br>'<%= @slump.title %>'.<br>Sorry, man!</p>
+	<% end %>
+	<!-- plot -->
+	<aside>
+	<!-- actions -->
+	<ul class="list-inline actions">
+		<li><span class="btn btn-default disabled">What's next</span></li>
+		<li>
+			<a href="http://www.imdb.com/title/<%= @slump.imdbid %>" 
+			class="btn btn-default btn-sm" target="_blank"><i class="fa fa-align-left"></i> IMDb</a>
+		</li>
+		<li>
+			<a href="http://www.youtube.com/results?search_query=<%= @slump.title %> trailer" 
+			class="btn btn-default btn-sm" target="_blank"><i class="fa fa-play"></i> Trailer</a>
+		</li>
+		<li>
+			<a href="http://www.amazon.com/gp/search?ie=UTF8&camp=1789&creative=9325&index=dvd&keywords=<%= @slump.title %>&linkCode=ur2&tag=filmcheckse-20&linkId=H25Z3OZXRK2TPB5X" 
+			class="btn btn-default btn-sm" target="_blank"><i class="fa fa-shopping-cart"></i> Buy</a>
+		</li>		
+		<% if @slump.sort.name == 'movie' %>
+		<li>
+			<a href="http://filmcheck.se/movies/from-slump/<%= @slump.imdbid %>" target="_blank" 
+			class="btn btn-default btn-sm"><i class="fa fa-sort-numeric-asc"></i> Rating</a>
+		</li>
+		<% end %>
+	</ul>
+	</aside>
+</div>
