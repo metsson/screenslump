@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Simple method for footer stats
   def slump_stats
   	@@count ||= Slump.count
-  	@@today ||= Slump.where('created_at > ?', Date.yesterday)
+  	@@today ||= Slump.where('created_at > ?', Date.today)
   	
   	stat = "#{@@count} slumps"
   	
