@@ -26,3 +26,5 @@ gem 'spring',        group: :development
 gem 'faker'
 
 gem 'rails_12factor', group: :production
+
+gem 'social-buttons'
